@@ -36,7 +36,7 @@
 
                         <ul class="dropdown-menu mt-2">
                             <li>
-                                <a href="kategori.html" class="dropdown-item">
+                                <a wire:navigate href="{{ route('admin.kategori') }}" class="dropdown-item">
                                     <i class="bx bx-objects-horizontal-right"></i> Kategori Produk
                                 </a>
                             </li>
@@ -56,8 +56,8 @@
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                            <img src="https://ui-avatars.com/api/?name=Muhammad Yunus" class="rounded-circle"
-                                width="36" alt="Muhammad Yunus">
+                            <img src="https://ui-avatars.com/api/?name=Maulana Ikhsan" class="rounded-circle"
+                                width="36" alt="Maulana Ikhsan">
                             {{ auth()->user()->name }}
                         </a>
 

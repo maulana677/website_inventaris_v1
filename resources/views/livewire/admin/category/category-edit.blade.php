@@ -1,6 +1,6 @@
 <div>
     <div class="d-flex align-items-center justify-content-between mb-5">
-        <h3 class="text-dark fw-semibold">Tambah Kategori</h3>
+        <h3 class="text-dark fw-semibold">Edit Kategori</h3>
         <a wire:navigate href="{{ route('admin.kategori') }}" class="btn btn-secondary">Batal</a>
     </div>
     <div class="card border-0">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">
-                            <i class="bx bx-save"></i> Simpan Baru
+                            <i class="bx bx-save"></i> Simpan Perubahan
                         </button>
                     </div>
                 </div>

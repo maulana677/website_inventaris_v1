@@ -31,7 +31,8 @@
                                 <td>40 Buah</td>
                                 <td>
                                     <div class="d-flex gap-2">
-                                        <a href="#" class="btn btn-warning btn-sm text-white">
+                                        <a wire:navigate href="{{ route('admin.kategori.edit', $item->id) }}"
+                                            class="btn btn-warning btn-sm text-white">
                                             <i class="bx bx-edit"></i> Edit
                                         </a>
                                         <button wire:confirm="Apakah anda yakin ingin menghapus data ?"

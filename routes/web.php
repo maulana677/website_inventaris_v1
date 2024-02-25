@@ -1,7 +1,9 @@
 <?php
 
 use App\Livewire\Admin\Category\CategoryCreate;
+use App\Livewire\Admin\Category\CategoryEdit;
 use App\Livewire\Admin\Category\CategoryIndex;
+use App\Livewire\Admin\Dashboard;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,11 +25,10 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    Route::get('/', Dashboard::class)->name('admin.dashboard');
 
     Route::get('kategori', CategoryIndex::class)->name('admin.kategori');
     Route::get('kategori/create', CategoryCreate::class)->name('admin.kategori.create');
+    Route::get('kategori/edit/{id}', CategoryEdit::class)->name('admin.kategori.edit');
 });
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
