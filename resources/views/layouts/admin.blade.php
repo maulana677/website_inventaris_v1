@@ -8,7 +8,7 @@
 </head>
 
 <body class="bg-soft-blue">
-    <nav class="navbar navbar-expand-lg bg-white py-3">
+    <nav class="navbar navbar-expand-lg py-3" style="background-color: #FAA300">
         <div class="container">
             <a href="." class="navbar-brand d-flex align-items-center gap-2 fw-bold">
                 <img src="assets/images/logo.png" alt="">
@@ -25,37 +25,43 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto gap-3">
                     <li class="nav-item">
-                        <a href="." class="nav-link active">
-                            <i class="bx bxs-dashboard"></i> Dashboard
+                        <a wire:navigate href="{{ route('admin.dashboard') }}"
+                            class="nav-link {{ request()->is('admin') ? 'active' : '' }} text-white">
+                            <i class="bx bxs-dashboard text-white"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <a href="#"
+                            class="nav-link dropdown-toggle {{ request()->is('admin/kategori*') || request()->is('admin/produk*') ? 'active' : '' }} text-white"
+                            data-bs-toggle="dropdown">
                             <i class="bx bx-box"></i> Inventaris
                         </a>
 
                         <ul class="dropdown-menu mt-2">
                             <li>
-                                <a wire:navigate href="{{ route('admin.kategori') }}" class="dropdown-item">
+                                <a wire:navigate href="{{ route('admin.kategori') }}"
+                                    class="dropdown-item {{ request()->is('admin/kategori*') ? 'active' : '' }}">
                                     <i class="bx bx-objects-horizontal-right"></i> Kategori Produk
                                 </a>
                             </li>
                             <li>
-                                <a href="produk.html" class="dropdown-item">
+                                <a wire:navigate href="{{ route('admin.produk') }}"
+                                    class="dropdown-item {{ request()->is('admin/produk*') ? 'active' : '' }}">
                                     <i class="bx bx-box"></i> Produk
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="transaksi.html" class="nav-link">
+                        <a href="transaksi.html" class="nav-link text-white">
                             <i class='bx bx-line-chart'></i> Transaksi
                         </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-white" role="button"
+                            data-bs-toggle="dropdown">
                             <img src="https://ui-avatars.com/api/?name=Maulana Ikhsan" class="rounded-circle"
                                 width="36" alt="Maulana Ikhsan">
                             {{ auth()->user()->name }}

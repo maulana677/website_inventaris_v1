@@ -10,7 +10,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="category_name">Nama Kategori</label>
-                            <input type="text" wire:model="name" id="category_name" class="form-control">
+                            <input type="text" wire:model="name" id="name" class="form-control">
                             <div class="text-danger fs-7">
                                 @error('name')
                                     {{ $message }}

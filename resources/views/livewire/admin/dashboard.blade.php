@@ -8,7 +8,7 @@
                     <h6 class="fs-7 text-uppercase text-secondary fw-semibold mb-2">
                         Total Produk di Inventaris
                     </h6>
-                    <h4 class="text-uppercase text-dark fw-semibold">5,020</h4>
+                    <h4 class="text-uppercase text-dark fw-semibold">{{ number_format($product_total) }}</h4>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                     <h6 class="fs-7 text-uppercase text-secondary fw-semibold mb-2">
                         Produk hampir habis
                     </h6>
-                    <h4 class="text-uppercase text-dark fw-semibold">1,020</h4>
+                    <h4 class="text-uppercase text-dark fw-semibold">{{ number_format($product_almost_out_stock) }}</h4>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                     <h6 class="fs-7 text-uppercase text-secondary fw-semibold mb-2">
                         Produk Stok Habis
                     </h6>
-                    <h4 class="text-uppercase text-dark fw-semibold">30</h4>
+                    <h4 class="text-uppercase text-dark fw-semibold">{{ number_format($product_out_stock) }}</h4>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     <h6 class="fs-7 text-uppercase text-secondary fw-semibold mb-2">
                         Total User Aplikasi
                     </h6>
-                    <h4 class="text-uppercase text-dark fw-semibold">21</h4>
+                    <h4 class="text-uppercase text-dark fw-semibold">{{ number_format($user_total) }}</h4>
                 </div>
             </div>
         </div>
