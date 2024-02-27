@@ -54,7 +54,8 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="transaksi.html" class="nav-link text-white">
+                        <a wire:navigate href="{{ route('admin.transaksi') }}"
+                            class="nav-link {{ request()->is('admin/transaksi*') ? 'active' : '' }} text-white">
                             <i class='bx bx-line-chart'></i> Transaksi
                         </a>
                     </li>

@@ -7,6 +7,8 @@ use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Product\ProductCreate;
 use App\Livewire\Admin\Product\ProductEdit;
 use App\Livewire\Admin\Product\ProductIndex;
+use App\Livewire\Admin\Transaction\TransactionCreate;
+use App\Livewire\Admin\Transaction\TransactionIndex;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +43,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('produk/edit/{id}', ProductEdit::class)->name('admin.produk.edit');
 
     /** Transaction Route */
+    Route::get('transaksi', TransactionIndex::class)->name('admin.transaksi');
+    Route::get('transaksi/create', TransactionCreate::class)->name('admin.transaksi.create');
 });
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
