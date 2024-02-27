@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @section('title', 'Inventaris')
     @include('components.header')
 </head>
 
@@ -11,10 +12,10 @@
     <nav class="navbar navbar-expand-lg py-3" style="background-color: #FAA300">
         <div class="container">
             <a href="." class="navbar-brand d-flex align-items-center gap-2 fw-bold">
-                <img src="assets/images/logo.png" alt="">
+                <img src="assets/images/logo_wh_d.png" alt="">
                 <div>
                     <p class="mb-0 fs-7" style="line-height: 15px;">
-                        Ware <br> <span class="text-primary">House</span>
+                        Ware <br> <span class="text-white">House</span>
                     </p>
                 </div>
             </a>

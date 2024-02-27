@@ -89,7 +89,7 @@
                 <div class="card border-0">
                     <div class="card-body">
                         <a href="." class="navbar-brand d-flex align-items-center gap-2 fw-bold mb-5">
-                            <img src="{{ url('assets/images/logo.png') }}" alt="">
+                            <img src="{{ url('assets/images/logo_wh_d.png') }}" alt="">
                             <div>
                                 <p class="mb-0 fs-7" style="line-height: 15px;">
                                     Ware <br> <span class="text-primary">House</span>
