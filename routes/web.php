@@ -7,6 +7,9 @@ use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Product\ProductCreate;
 use App\Livewire\Admin\Product\ProductEdit;
 use App\Livewire\Admin\Product\ProductIndex;
+use App\Livewire\Admin\Staff\StaffCreate;
+use App\Livewire\Admin\Staff\StaffEdit;
+use App\Livewire\Admin\Staff\StaffIndex;
 use App\Livewire\Admin\Transaction\TransactionCreate;
 use App\Livewire\Admin\Transaction\TransactionIndex;
 use Illuminate\Support\Facades\Auth;
@@ -41,6 +44,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('produk', ProductIndex::class)->name('admin.produk');
     Route::get('produk/create', ProductCreate::class)->name('admin.produk.create');
     Route::get('produk/edit/{id}', ProductEdit::class)->name('admin.produk.edit');
+
+    /** Staff Route */
+    Route::get('staff', StaffIndex::class)->name('admin.staff');
+    Route::get('staff/create', StaffCreate::class)->name('admin.staff.create');
+    Route::get('staff/edit/{id}', StaffEdit::class)->name('admin.staff.edit');
 
     /** Transaction Route */
     Route::get('transaksi', TransactionIndex::class)->name('admin.transaksi');

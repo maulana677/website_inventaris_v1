@@ -54,11 +54,19 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a wire:navigate href="{{ route('admin.transaksi') }}"
-                            class="nav-link {{ request()->is('admin/transaksi*') ? 'active' : '' }} text-white">
-                            <i class='bx bx-line-chart'></i> Transaksi
+                        <a wire:navigate href="{{ route('admin.staff') }}"
+                            class="nav-link {{ request()->is('admin/staff*') ? 'active' : '' }} text-white">
+                            <i class='bx bx-user-pin'></i> Staff
                         </a>
                     </li>
+                    @if (Auth::user()->roles == 'staff')
+                        <li class="nav-item">
+                            <a wire:navigate href="{{ route('admin.transaksi') }}"
+                                class="nav-link {{ request()->is('admin/transaksi*') ? 'active' : '' }} text-white">
+                                <i class='bx bx-line-chart'></i> Transaksi
+                            </a>
+                        </li>
+                    @endif
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">

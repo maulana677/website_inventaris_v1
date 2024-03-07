@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">
-                            <i class="bx bx-save"></i> Simpan Baru
+                            <i class="bx bx-save"></i> Simpan Perubahan
                         </button>
                     </div>
                 </div>
