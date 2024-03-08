@@ -28,7 +28,7 @@ class CategoryCreate extends Component
         return $this->redirectRoute('admin.kategori', navigate: true);
     }
 
-    #[Layout('layouts.admin')]
+    #[Layout('layouts.admin', ['title' => 'Category Create'])]
     public function render()
     {
         return view('livewire.admin.category.category-create');

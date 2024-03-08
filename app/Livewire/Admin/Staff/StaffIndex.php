@@ -14,7 +14,7 @@ class StaffIndex extends Component
         session()->flash('status', 'Staff Berhasil Dihapus');
     }
 
-    #[Layout('layouts.admin')]
+    #[Layout('layouts.admin', ['title' => 'Staff'])]
     public function render()
     {
         return view('livewire.admin.staff.staff-index', [

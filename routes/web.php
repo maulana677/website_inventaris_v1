@@ -30,12 +30,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', StaffDashboard::class)->middleware(['staff', 'auth'])->name('staff.dashboard');
 
 /** Transaction Route */
-Route::get('transaksi', TransactionIndex::class)->middleware('staff')->name('staff.transaksi');
-Route::get('transaksi/create', TransactionCreate::class)->middleware('staff')->name('staff.transaksi.create');
+Route::get('transaksi', TransactionIndex::class)->middleware(['staff', 'auth'])->name('staff.transaksi');
+Route::get('transaksi/create', TransactionCreate::class)->middleware(['staff', 'auth'])->name('staff.transaksi.create');
 
 Auth::routes(['register' => false]);
 
-Route::prefix('admin')->middleware('admin')->group(function () {
+Route::prefix('admin')->middleware(['admin', 'auth'])->group(function () {
     Route::get('/', Dashboard::class)->name('admin.dashboard');
 
     /** Category Route */

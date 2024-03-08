@@ -61,7 +61,7 @@ class ProductCreate extends Component
         return $this->redirectRoute('admin.produk', navigate: true);
     }
 
-    #[Layout('layouts.admin')]
+    #[Layout('layouts.admin', ['title' => 'Produk Create'])]
     public function render()
     {
         return view('livewire.admin.product.product-create', [

@@ -14,7 +14,7 @@ class CategoryIndex extends Component
         session()->flash('status', 'Data Berhasil Dihapus');
     }
 
-    #[Layout('layouts.admin')]
+    #[Layout('layouts.admin', ['title' => 'Category'])]
     public function render()
     {
         return view('livewire.admin.category.category-index', [

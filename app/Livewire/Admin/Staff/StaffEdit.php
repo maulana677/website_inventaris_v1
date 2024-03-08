@@ -48,7 +48,7 @@ class StaffEdit extends Component
         return $this->redirectRoute('admin.staff', navigate: true);
     }
 
-    #[Layout('layouts.admin')]
+    #[Layout('layouts.admin', ['title' => 'Staff Edit'])]
     public function render()
     {
         return view('livewire.admin.staff.staff-edit');

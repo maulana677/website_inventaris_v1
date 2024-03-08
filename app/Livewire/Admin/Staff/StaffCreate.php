@@ -30,7 +30,7 @@ class StaffCreate extends Component
         return $this->redirectRoute('admin.staff', navigate: true);
     }
 
-    #[Layout('layouts.admin')]
+    #[Layout('layouts.admin', ['title' => 'Staff Create'])]
     public function render()
     {
         return view('livewire.admin.staff.staff-create');
