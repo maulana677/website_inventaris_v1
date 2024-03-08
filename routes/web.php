@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', StaffDashboard::class)->middleware('staff')->name('staff.dashboard');
+Route::get('/', StaffDashboard::class)->middleware(['staff', 'auth'])->name('staff.dashboard');
 
 /** Transaction Route */
 Route::get('transaksi', TransactionIndex::class)->middleware('staff')->name('staff.transaksi');
