@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Admin\Transaction;
+namespace App\Livewire\Staff\Transaction;
 
 use App\Models\Product;
 use App\Models\Transaction;
@@ -24,7 +24,7 @@ class TransactionIndex extends Component
     #[Layout('layouts.admin')]
     public function render()
     {
-        return view('livewire.admin.transaction.transaction-index', [
+        return view('livewire.staff.transaction.transaction-index', [
             'transactions' => Transaction::orderBy('id', 'desc')->get()
         ]);
     }

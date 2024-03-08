@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Admin\Transaction;
+namespace App\Livewire\Staff\Transaction;
 
 use App\Models\Product;
 use App\Models\Transaction;
@@ -30,7 +30,7 @@ class TransactionCreate extends Component
     public function updatedQuantity()
     {
         $product = Product::find($this->product_id);
-        $this->total = 'Rp. ' . number_format($product->selling_price * $this->quantity);
+        $this->total = 'Rp. ' . number_format((int)$product->selling_price * (int)$this->quantity);
     }
 
     public function save()
@@ -50,12 +50,12 @@ class TransactionCreate extends Component
         $product->update(['stock' => $product->stock - $this->quantity]);
 
         session()->flash('status', 'Transaksi Baru Berhasil Dibuat');
-        return $this->redirectRoute('admin.transaksi', navigate: true);
+        return $this->redirectRoute('staff.transaksi', navigate: true);
     }
 
     #[Layout('layouts.admin')]
     public function render()
     {
-        return view('livewire.admin.transaction.transaction-create');
+        return view('livewire.staff.transaction.transaction-create');
     }
 }

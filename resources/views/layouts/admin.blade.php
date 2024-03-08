@@ -25,48 +25,57 @@
 
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto gap-3">
-                    <li class="nav-item">
-                        <a wire:navigate href="{{ route('admin.dashboard') }}"
-                            class="nav-link {{ request()->is('admin') ? 'active' : '' }} text-white">
-                            <i class="bx bxs-dashboard text-white"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#"
-                            class="nav-link dropdown-toggle {{ request()->is('admin/kategori*') || request()->is('admin/produk*') ? 'active' : '' }} text-white"
-                            data-bs-toggle="dropdown">
-                            <i class="bx bx-box"></i> Inventaris
-                        </a>
 
-                        <ul class="dropdown-menu mt-2">
-                            <li>
-                                <a wire:navigate href="{{ route('admin.kategori') }}"
-                                    class="dropdown-item {{ request()->is('admin/kategori*') ? 'active' : '' }}">
-                                    <i class="bx bx-objects-horizontal-right"></i> Kategori Produk
-                                </a>
-                            </li>
-                            <li>
-                                <a wire:navigate href="{{ route('admin.produk') }}"
-                                    class="dropdown-item {{ request()->is('admin/produk*') ? 'active' : '' }}">
-                                    <i class="bx bx-box"></i> Produk
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a wire:navigate href="{{ route('admin.staff') }}"
-                            class="nav-link {{ request()->is('admin/staff*') ? 'active' : '' }} text-white">
-                            <i class='bx bx-user-pin'></i> Staff
-                        </a>
-                    </li>
-                    @if (Auth::user()->roles == 'staff')
+                    @if (Auth::user()->roles == 'admin')
                         <li class="nav-item">
-                            <a wire:navigate href="{{ route('admin.transaksi') }}"
-                                class="nav-link {{ request()->is('admin/transaksi*') ? 'active' : '' }} text-white">
+                            <a wire:navigate href="{{ route('admin.dashboard') }}"
+                                class="nav-link {{ request()->is('admin') ? 'active' : '' }} text-white">
+                                <i class="bx bxs-dashboard text-white"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#"
+                                class="nav-link dropdown-toggle {{ request()->is('admin/kategori*') || request()->is('admin/produk*') ? 'active' : '' }} text-white"
+                                data-bs-toggle="dropdown">
+                                <i class="bx bx-box"></i> Inventaris
+                            </a>
+
+                            <ul class="dropdown-menu mt-2">
+                                <li>
+                                    <a wire:navigate href="{{ route('admin.kategori') }}"
+                                        class="dropdown-item {{ request()->is('admin/kategori*') ? 'active' : '' }}">
+                                        <i class="bx bx-objects-horizontal-right"></i> Kategori Produk
+                                    </a>
+                                </li>
+                                <li>
+                                    <a wire:navigate href="{{ route('admin.produk') }}"
+                                        class="dropdown-item {{ request()->is('admin/produk*') ? 'active' : '' }}">
+                                        <i class="bx bx-box"></i> Produk
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a wire:navigate href="{{ route('admin.staff') }}"
+                                class="nav-link {{ request()->is('admin/staff*') ? 'active' : '' }} text-white">
+                                <i class='bx bx-user-pin'></i> Staff
+                            </a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a wire:navigate href="{{ route('staff.dashboard') }}"
+                                class="nav-link {{ request()->is('/') ? 'active' : '' }} text-white">
+                                <i class="bx bxs-dashboard text-white"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a wire:navigate href="{{ route('staff.transaksi') }}"
+                                class="nav-link {{ request()->is('transaksi*') ? 'active' : '' }} text-white">
                                 <i class='bx bx-line-chart'></i> Transaksi
                             </a>
                         </li>
                     @endif
+
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">

@@ -1,7 +1,7 @@
 <div>
     <div class="d-flex align-items-center justify-content-between mb-5">
         <h3 class="text-dark fw-semibold">Tambah Transaksi</h3>
-        <a wire:navigate href="{{ route('admin.produk') }}" class="btn btn-secondary">Batal</a>
+        <a wire:navigate href="{{ route('staff.transaksi') }}" class="btn btn-secondary">Batal</a>
     </div>
     <div class="card border-0">
         <div class="card-body">

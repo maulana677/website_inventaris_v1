@@ -10,8 +10,9 @@ use App\Livewire\Admin\Product\ProductIndex;
 use App\Livewire\Admin\Staff\StaffCreate;
 use App\Livewire\Admin\Staff\StaffEdit;
 use App\Livewire\Admin\Staff\StaffIndex;
-use App\Livewire\Admin\Transaction\TransactionCreate;
-use App\Livewire\Admin\Transaction\TransactionIndex;
+use App\Livewire\Staff\Dashboard as StaffDashboard;
+use App\Livewire\Staff\Transaction\TransactionCreate;
+use App\Livewire\Staff\Transaction\TransactionIndex;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,13 +27,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', StaffDashboard::class)->middleware('staff')->name('staff.dashboard');
+
+/** Transaction Route */
+Route::get('transaksi', TransactionIndex::class)->middleware('staff')->name('staff.transaksi');
+Route::get('transaksi/create', TransactionCreate::class)->middleware('staff')->name('staff.transaksi.create');
 
 Auth::routes(['register' => false]);
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', Dashboard::class)->name('admin.dashboard');
 
     /** Category Route */
@@ -49,9 +52,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('staff', StaffIndex::class)->name('admin.staff');
     Route::get('staff/create', StaffCreate::class)->name('admin.staff.create');
     Route::get('staff/edit/{id}', StaffEdit::class)->name('admin.staff.edit');
-
-    /** Transaction Route */
-    Route::get('transaksi', TransactionIndex::class)->name('admin.transaksi');
-    Route::get('transaksi/create', TransactionCreate::class)->name('admin.transaksi.create');
 });
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

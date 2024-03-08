@@ -1,7 +1,7 @@
 <div>
     <div class="d-flex align-items-center justify-content-between mb-5">
         <h3 class="text-dark fw-semibold">Transaksi</h3>
-        <a wire:navigate href="{{ route('admin.transaksi.create') }}" class="btn btn-primary">Tambah Transaksi Baru</a>
+        <a wire:navigate href="{{ route('staff.transaksi.create') }}" class="btn btn-primary">Tambah Transaksi Baru</a>
     </div>
     @if (session('status'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
